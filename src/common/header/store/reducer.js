@@ -1,6 +1,6 @@
 import {
   SET_INPUT_FOCUS
-} from '../../../store/action-types'
+} from '@/store/action-types'
 
 const defaultState = {
   focused: false

@@ -14,7 +14,7 @@ import {
 
 import {
   setInputFocus
-} from '../../store/actions'
+} from '@/store/actions'
 
 const Header = ({ focused, handleInputFocus, handleInputBlur}) => {
   return (<HeaderWrapper>
