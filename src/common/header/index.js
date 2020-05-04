@@ -8,13 +8,62 @@ import {
   NavItem,
   NavSearch,
   SearchWrapper,
+  SearchInfo,
+  SearchInfoTitle,
+  SearchInfoSwitch,
+  SearchInfoItem,
+  SearchInfoItemWrapper,
+  SerachInfoHistoryWrapper,
+  SerachInfoHistory,
   Addition,
   Button
 } from './style'
 
 import { actionCreators } from './store'
 
-const Header = ({ focused, handleInputFocus, handleInputBlur}) => {
+const getListArea = (searchItem, searchHistory, handleDeleteHistoryItem, show) => {
+  if(show) {
+    return (
+      <SearchInfo>
+        <SearchInfoTitle>
+          热门搜索
+            <SearchInfoSwitch>
+             换一批
+            </SearchInfoSwitch>
+          <i className="iconfont">&#xe67b;</i>
+        </SearchInfoTitle>
+        <SearchInfoItemWrapper>
+          {
+            searchItem.map((item, index) => {
+              return (
+                <SearchInfoItem key={item}>{item}</SearchInfoItem>
+              )
+            })
+          }
+        </SearchInfoItemWrapper>
+        <SerachInfoHistoryWrapper>
+          {
+            searchHistory.map((item,index) => {
+              return (
+                <SerachInfoHistory key={item}>
+                  <i className="iconfont history">&#xe675;</i>
+                  <i className="iconfont delete" onClick={(e) => {
+                    handleDeleteHistoryItem(index, e)}
+                    }>&#xe6ae;</i>
+                  {item}
+                </SerachInfoHistory>
+              )
+            })
+          }
+        </SerachInfoHistoryWrapper>
+      </SearchInfo>
+    )
+  }
+  return null
+}
+
+
+const Header = ({ focused, searchItem, searchHistory, handleInputFocus, handleInputBlur, handleDeleteHistoryItem}) => {
   return (<HeaderWrapper>
     <Logo />
     <Nav>
@@ -36,6 +85,7 @@ const Header = ({ focused, handleInputFocus, handleInputBlur}) => {
           />
         </CSSTransition>
         <i className={focused ? 'iconfont focused' : 'iconfont'}>&#xe60d;</i>
+        {getListArea(searchItem, searchHistory, handleDeleteHistoryItem, focused)}
       </SearchWrapper>
 
     </Nav>
@@ -50,7 +100,9 @@ const Header = ({ focused, handleInputFocus, handleInputBlur}) => {
 }
 const mapStateToProps = (state) => {
   return {
-    focused: state.header.focused
+    focused: state.getIn(['header','focused']),
+    searchItem: state.getIn(['header', 'searchItem']),
+    searchHistory: state.getIn(['header', 'searchHistory'])
   }
 }
 
@@ -61,6 +113,10 @@ const mapDispathToProps = (dispatch) => {
     },
     handleInputBlur() {
       dispatch(actionCreators.setInputBlur())
+    },
+    handleDeleteHistoryItem(index, e) {
+      e.stopPropagation()
+      dispatch(actionCreators.deleteSearchHistoty(index))
     }
   }
 }

@@ -62,7 +62,6 @@ export const NavSearch = styled.input.attrs({
   background: #eee;
   padding: 0 35px 0 20px;
   box-sizing: border-box;
-  margin-left: 20px;
   font-size: 14x;
   color: #333;
   &::placeholder {
@@ -89,6 +88,7 @@ export const NavSearch = styled.input.attrs({
 export const SearchWrapper = styled.div`
   float: left;
   position: relative;
+  margin-left: 20px;
   .iconfont {
     position: absolute;
     width: 30px;
@@ -106,12 +106,93 @@ export const SearchWrapper = styled.div`
   
 `
 
+export const SearchInfo = styled.div`
+  position: absolute;
+  left: 0;
+  top: 56px;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
+  padding: 5px;
+  color: #999;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+    border-bottom-color: #fff;
+    left: 20px;
+    bottom: 99%;
+  }
+`
+
+export const SearchInfoTitle = styled.div`
+  margin: 5px 0 15px 5px;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  .iconfont {
+    position: absolute;
+    top: 0;
+    right:34px;
+    line-height: 20px;
+  }
+`
+
+export const SearchInfoSwitch = styled.span`
+  float: right;
+  font-size: 12px;
+  line-height: 20px;
+`
+export const SearchInfoItemWrapper = styled.div`
+  overflow: hidden;
+`
+export const SearchInfoItem = styled.a`
+  padding: 2px 8px;
+  margin:5px 5px;
+  line-height: 20px;
+  float: left;
+  display: block;
+  font-size: 12px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
+
+`
+
+export const SerachInfoHistory = styled.a`
+  margin:10px 5px;
+  padding: 2px 6px 2px 40px;
+  display: block;
+  line-height: 30px;
+  &:hover{
+    background: #f0f0f0;
+    border-radius: 3px;
+  }
+  position: relative;
+  .iconfont {
+    position: absolute;
+  }
+  .iconfont.history{
+    top: 2px;
+    left: 0;
+  }
+  .iconfont.delete{
+    right: 0;
+    top: 2px;
+    cursor: pointer;
+  }
+`
+
+export const SerachInfoHistoryWrapper = styled.div`
+
+`
+
 export const Addition = styled.div`
   position: absolute;
   top: 0;
   right: 10px;
   height: 56px;
-
 `
 
 export const Button = styled.div`
@@ -134,3 +215,4 @@ export const Button = styled.div`
     background-color: #ea6f5a
   }
 `
+

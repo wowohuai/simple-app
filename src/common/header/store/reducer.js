@@ -1,19 +1,23 @@
+import { fromJS } from 'immutable'
 import { types } from './'
 
-const defaultState = {
-  focused: false
-}
+const defaultState = fromJS({
+  focused: false,
+  searchItem: ['教育', '餐饮', 'vue','react','typescript','nginx','flutter'],
+  searchHistory: ['react','redux', 'router']
+})
 
 export default (state = defaultState, action) => {
   if (action.type === types.SET_INPUT_FOCUS) {
-    const newState = JSON.parse(JSON.stringify(state))
-    newState.focused = true
-    return newState
+    return state.set('focused', true)
   }
   if (action.type === types.SET_INPUT_BLUR) {
-    const newState = JSON.parse(JSON.stringify(state))
-    newState.focused = false
-    return newState
+    return state.set('focused', false)
+  }
+  if (action.type === types.DELETE_SEARCH_HISTORY) {
+    const searchHistory = state.get('searchHistory').toJS()
+    searchHistory.splice(action.index, 1)
+    return state.set('searchHistory', fromJS(searchHistory))
   }
   return state
 }
