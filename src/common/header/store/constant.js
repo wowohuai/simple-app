@@ -1,3 +1,6 @@
 export const SET_INPUT_FOCUS = 'header/set_input_focus'
 export const SET_INPUT_BLUR = 'header/set_input_blur'
 export const DELETE_SEARCH_HISTORY = 'header/delete_search_history'
+export const CHANGE_SEARCH_ITEM = 'header/change_search_item'
+export const SET_MOUSE_STATE = 'header/set_mouse_state'
+export const SET_PAGE = 'header/set_page'

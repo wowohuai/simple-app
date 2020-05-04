@@ -11,3 +11,6 @@
 2. 引入redux管理数据  配合react-redux
 
 拆分reducer， 在每个组件下设置对应的reducer， 最后使用combineReducers合并所有的reducer
+
+3. 引入redux-thunk中间件进行异步action的使用
+

@@ -1,4 +1,5 @@
-import { createStore, compose } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 import reducer from './reducer'
 
 const composeEnhancers =
@@ -6,7 +7,7 @@ const composeEnhancers =
 
 const enhancer =
   composeEnhancers(
-    // applyMiddleware(sagaMiddleware)
+    applyMiddleware(thunk)
   )
 const store = createStore(
   reducer,

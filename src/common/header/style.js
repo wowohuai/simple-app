@@ -62,7 +62,6 @@ export const NavSearch = styled.input.attrs({
   background: #eee;
   padding: 0 35px 0 20px;
   box-sizing: border-box;
-  font-size: 14x;
   color: #333;
   &::placeholder {
     color: #999;
@@ -132,11 +131,15 @@ export const SearchInfoTitle = styled.div`
   font-size: 14px;
   line-height: 20px;
   position: relative;
-  .iconfont {
+  cursor:pointer;
+  .iconfont.spin {
     position: absolute;
-    top: 0;
+    top: -4px;
     right:34px;
-    line-height: 20px;
+    line-height: 30px;
+    transition: all .4s ease-in;
+    //设置旋转中心
+    transform-origin: center;
   }
 `
 
