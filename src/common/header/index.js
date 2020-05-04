@@ -12,9 +12,7 @@ import {
   Button
 } from './style'
 
-import {
-  setInputFocus
-} from '@/store/actions'
+import { actionCreators } from './store'
 
 const Header = ({ focused, handleInputFocus, handleInputBlur}) => {
   return (<HeaderWrapper>
@@ -59,10 +57,10 @@ const mapStateToProps = (state) => {
 const mapDispathToProps = (dispatch) => {
   return {
     handleInputFocus() {
-      dispatch(setInputFocus(true))
+      dispatch(actionCreators.setInputFocus())
     },
     handleInputBlur() {
-      dispatch(setInputFocus(false))
+      dispatch(actionCreators.setInputBlur())
     }
   }
 }
