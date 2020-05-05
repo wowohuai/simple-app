@@ -1,5 +1,5 @@
 import  styled from 'styled-components'
-import logoPic from '../../static/logo.png'
+import logoPic from '@/static/img/logo.png'
 
 export const HeaderWrapper = styled.div`
   position: relative;
@@ -112,6 +112,7 @@ export const SearchInfo = styled.div`
   width: 250px;
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0,0,0,.2);
+  border-radius: 2px;
   padding: 5px;
   color: #999;
   &::after {

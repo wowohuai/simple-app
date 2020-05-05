@@ -1,0 +1,1 @@
+export const SET_TOPIC_LIST = 'home/set_topic_list'
