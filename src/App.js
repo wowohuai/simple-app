@@ -10,8 +10,8 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <Fragment>
-          <Header/>
           <Router>
+            <Header/>
             <Switch>
               <Suspense fallback={<Loading />}>
                 <Route exact path='/' component = {React.lazy(() => import('@/pages/home'))} />

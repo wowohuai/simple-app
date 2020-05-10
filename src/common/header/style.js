@@ -2,7 +2,14 @@ import  styled from 'styled-components'
 import logoPic from '@/static/img/logo.png'
 
 export const HeaderWrapper = styled.div`
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  z-index: 100;
   height: 56px;
   line-height: 56px;
   background-color: #fff;
@@ -10,9 +17,7 @@ export const HeaderWrapper = styled.div`
   border-bottom: 1px solid #f0f0f0;
 `
 
-export const Logo = styled.a.attrs({
-  href: '/'
-})`
+export const Logo = styled.div`
   position: absolute;
   height:56px;
   display: block;
@@ -107,6 +112,7 @@ export const SearchWrapper = styled.div`
 
 export const SearchInfo = styled.div`
   position: absolute;
+  z-index: 999;
   left: 0;
   top: 56px;
   width: 250px;

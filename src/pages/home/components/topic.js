@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import * as actionCreators from '../store/action-creators'
 import imgPic from '@/static/img/topic.jpg'
 import {
   TopicWrapper,
   TopicItem
 } from '../style'
 
-class Topic extends Component {
+class Topic extends PureComponent {
   render() {
     const { list } = this.props
     return (
@@ -15,7 +14,7 @@ class Topic extends Component {
         {
           list.map((item, index) => {
             return (
-              <TopicItem key={item.get('title')}>
+              <TopicItem key={item.get('id')}>
                 <img src={imgPic} className='topic-pic' alt='图片加载失败'/>
                 <span>{item.get('title')}</span>
               </TopicItem>
@@ -25,9 +24,7 @@ class Topic extends Component {
       </TopicWrapper>
     )
   }
-  componentDidMount() {
-    this.props.getTopicList()
-  }
+  
 }
 const mapStateToProps = state => {
   return {
@@ -35,12 +32,5 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getTopicList() {
-      dispatch(actionCreators.getTopicList())
-    }
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Topic)
+export default connect(mapStateToProps, null)(Topic)

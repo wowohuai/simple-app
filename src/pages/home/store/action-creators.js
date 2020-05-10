@@ -1,15 +1,46 @@
 import { types }from './'
-import { _getTopicList } from '@/api/home'
+import { _getHomeData, _getList } from '@/api/home'
 
-const setTopicList = list => ({
-  type: types.SET_TOPIC_LIST,
-  list
+const setHomeData = data => ({
+  type: types.SET_HOME_DATA,
+  data
 })
 
-export const getTopicList = () => {
+const addList = ({data, page}) => ({
+  type: types.ADD_LIST_DATA,
+  data,
+  page: ++page
+})
+
+export const getHomeData = () => {
   return async (dispatch) => {
-    const res = await _getTopicList();
+    const res = await _getHomeData();
     const { data } = res
-    dispatch(setTopicList(data))
+    dispatch(setHomeData(data))
   }
 }
+
+
+export const getList = (page) => {
+  return async (dispatch) => {
+    const res = await _getList({
+      page
+    });
+    const { data } = res
+    dispatch(addList({
+      data,
+      page
+    }))
+  }
+}
+
+
+export const setBackTitle = (show) => ({
+  type: types.SET_BACK_TITLE,
+  show
+})
+
+export const setBackTop = (show) => ({
+  type: types.SET_BACK_TOP,
+  show
+})

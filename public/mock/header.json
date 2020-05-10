@@ -1,10 +1,4 @@
 {
   "code": 0,
-  "data": ["教育",   "餐饮", "vue", "react", "type1scrbipt", "nginx", "flutater",
-            "教育2", "餐饮2", "vue2", "react2", "type2shcript", "ngainx", "flsutter", 
-                    "餐饮3", "vue3", "reac3t", "typ3egscript", "ngisnx", "fldutter", 
-                    "餐饮4", "vue4", "reac2t", "typ4esjcript", "ngifnx", "flfutter", 
-                    "餐饮5", "vue61", "reaect", "typ6esncript", "ngignx", "flgutter", 
-                    "餐饮6", "vue6", "reacmt", "typ5escript", "nginhx", "fluthter", 
-                    "餐饮7", "vue7", "reafct", "types7ncript", "ngijnx", "flutjter"]
-    }
+  "data": ["高考", "区块链", "三生三世", "崔永元", "vue", "小程序", "茶点微小说", "萨沙讲史堂", "夜幕下的地安门", "擦亮你的眼", "理财", "毕业", "手帐", "简书交友", "spring", "古风", "故事", "暖寄归人", "旅行", "连载", "教育", "简书", "生活", "投稿", "历史", "PHP", "考研", "docker", "EOS", "微信小程序", "PPT", "职场", "大数据", "创业", "书评", "东凤", "饱醉豚", "雨落荒原", "程序员", "爬虫", "时间管理", "kotlin", "数据分析", "阴阳合同", "设计", "红楼梦", "父亲节", "女人和衣服", "swift", "高考作文"]
+}

@@ -16,6 +16,13 @@
 
 4. 引入react-router-dom进行路由管理
 
-5 解决图片和文字垂直居中对齐 和 图片间隙的问题
+5. 解决图片和文字垂直居中对齐 和 图片间隙的问题
 
 该文章讲的非常清晰明朗 https://juejin.im/post/5a7d6b886fb9a06349129463
+
+  
+6. 使用 shouldComponentUpdate 来进行组件的性能优化
+
+在数据变更时 判断该组件需不需要进行更新
+
+可以使用PureComponent 代替 Component， pureComponent（避免踩坑，建议搭配immutable.js使用）底层实现了shouldComponentUpdate，不需要我们自己在每个组件中去实现这个方法

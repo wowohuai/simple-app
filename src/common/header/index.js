@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { 
   HeaderWrapper,
@@ -85,8 +86,13 @@ class Header extends Component {
 
   render() {
     const { focused, searchItem, handleInputFocus, handleInputBlur } = this.props
-    return (<HeaderWrapper>
-      <Logo />
+    return (
+    <header>
+    <HeaderWrapper>
+      <Link to='/'>
+        <Logo />
+      </Link>
+
       <Nav>
         <NavItem className="left active" href="/">首页</NavItem>
         <NavItem className="left" href="https://www.jianshu.com/">下载App</NavItem>
@@ -116,7 +122,7 @@ class Header extends Component {
             </Button>
         <Button className="register">注册</Button>
       </Addition>
-    </HeaderWrapper>
+        </HeaderWrapper></header>
     )
   }
 }
