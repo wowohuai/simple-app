@@ -87,7 +87,7 @@ class Header extends Component {
   render() {
     const { focused, searchItem, handleInputFocus, handleInputBlur } = this.props
     return (
-    <header>
+    <header style={{height: '56px'}}>
     <HeaderWrapper>
       <Link to='/'>
         <Logo />
@@ -122,7 +122,8 @@ class Header extends Component {
             </Button>
         <Button className="register">注册</Button>
       </Addition>
-        </HeaderWrapper></header>
+        </HeaderWrapper>
+        </header>
     )
   }
 }

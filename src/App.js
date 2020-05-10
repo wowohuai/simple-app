@@ -15,7 +15,7 @@ function App() {
             <Switch>
               <Suspense fallback={<Loading />}>
                 <Route exact path='/' component = {React.lazy(() => import('@/pages/home'))} />
-                <Route exact path='/detail' component={React.lazy(() => import('@/pages/detail'))} />
+                <Route exact path='/detail/:id' component={React.lazy(() => import('@/pages/detail'))} />
               </Suspense>
             </Switch>
           </Router>
